@@ -15,9 +15,9 @@ CORS(ank, support_credentials=True)
 @cross_origin(supports_credentials=True)
 def index():
     users = request.get_json("query")
-    users = users.values()
-    for user in users:
-        d="SELECT Name FROM elder_details WHERE Id"+"="+user+";"
+    users = list(users.values())
+    if users[0]=="Login":
+        d="SELECT Name,Age,Fund_raised,Contact,Review,Rating FROM elder_details WHERE Id"+"="+users[1]+"AND Password"+"="+users[2]+";"
         print(d)
         cursor.execute(d)
         rows = list(cursor.fetchone())
