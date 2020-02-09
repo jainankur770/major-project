@@ -18,7 +18,6 @@ def index():
     users = list(users.values())
     if users[0]=="Login":
         d="SELECT Name,Age,Fund_raised,Contact,Review,Rating FROM elder_details WHERE Id"+"="+users[1]+"AND Password"+"="+users[2]+";"
-        print(d)
         cursor.execute(d)
         rows = list(cursor.fetchone())
         for j in rows:
