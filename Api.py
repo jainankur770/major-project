@@ -23,7 +23,6 @@ def index():
         rows = list(cursor.fetchone())
         for j in rows:
             j=jsonify(j)
-            #j.headers["Access-Control-Allow-Origin"] = '*'
         return(j)
 
 if __name__ == "__main__":
