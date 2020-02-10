@@ -14,14 +14,25 @@ CORS(ank, support_credentials=True)
 @ank.route("/",methods = ['GET','POST'])
 @cross_origin(supports_credentials=True)
 def index():
-    users = request.get_json("query")
-    users = list(users.values())
-    if users[0]=="Login":
-        d="SELECT Name,Age,Fund_raised,Contact,Review,Rating FROM elder_details WHERE Id"+"="+users[1]+"AND Password"+"="+users[2]+";"
+    users = request.args.get("query")
+    print(users)
+    if users=="Login":
+        user=request.args.get("Id")
+        print(user)
+        d="SELECT Name,Age,Fund_raised,Contact,Review,Rating FROM elder_details WHERE Id"+"="+user+";"
+        id="SELECT Taken_care_by FROM elder_details WHERE Id" + "="+user+";"
         cursor.execute(d)
         rows = list(cursor.fetchone())
-        for j in rows:
-            j=jsonify(j)
+        cursor.execute(id)
+        id=cursor.fetchone()
+        print(id)
+        for Id in id:
+            Taken_care_by="SELECT youth_details.Name FROM elder_details INNER JOIN youth_details ON elder_details.Taken_care_by=youth_details.Id Where elder_details.Taken_care_by"+"="+str(Id)+";"
+            print(Taken_care_by)
+            cursor.execute(Taken_care_by)
+            Taken_care_by=cursor.fetchone()
+        #rows=rows.append(Taken_care_by)
+        j=jsonify(rows,Taken_care_by)
         return(j)
 
 if __name__ == "__main__":
