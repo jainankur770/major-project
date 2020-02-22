@@ -34,6 +34,9 @@ def index():
                 cursor.execute(Taken_care_by)
                 Taken_care_by=cursor.fetchone()
             #rows=rows.append(Taken_care_by)
+            #if rows > 0 :
+            #then return j
+            #else return 0
             j=jsonify(rows,Taken_care_by)
             return(j)
         elif user_type=="Young":
@@ -57,7 +60,8 @@ def index():
             print(id)
             cursor.execute(id) 
             i=list(cursor.fetchone())
-            i=jsonify(i[0])
+            i="Old_"+str(i[0])
+            i=jsonify(i)
             print(i)
             return(i)
         elif user_type=="Young":
@@ -73,7 +77,8 @@ def index():
             id="SELECT Id FROM youth_details Where Contact"+"="+str(contact_no)+";"
             cursor.execute(id) 
             i=list(cursor.fetchone())
-            i=jsonify(i[0])
+            i="Young_"+str(i[0])
+            i=jsonify(i)
             return(i)
         
 
