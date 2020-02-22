@@ -1,45 +1,132 @@
-.ca-shadow{
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+.ca-shadow-login, .ca-shadow-signup{
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 30px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-image: linear-gradient(180deg,red,black);
 }
 
-.ca-main-modal{
-    position: relative;
-    background-color: #fefefe;
-    margin: auto;
-    padding: 0;
-    border: 1px solid #888;
-    width: 80%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-    animation-name: bounceIn;
-    animation-duration: 0.4s;
-    line-height: 0;
+.ca-main-login-modal, .ca-main-signup-modal{
+  display: flex;
+  position: relative;
+  color: black;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 40px 40px;
+  border: 1px solid #888;
+  width: 80%;
+  min-height: 80vh;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  animation-name: bounceIn;
+  animation-duration: 0.4s;
+  line-height: 0;
 }
 
 /* Add Animation */
 @keyframes bounceIn{
-    0%{
-      opacity: 0;
-      transform: scale(0.3);
-    }
-    50%{
-      opacity: 0.9;
-      transform: scale(1.1);
-    }
-    80%{
-      opacity: 1;
-      transform: scale(0.89);
-    }
-    100%{
-      opacity: 1;
-      transform: scale(1);
-    }
+  0%{
+    opacity: 0;
+    transform: scale(0.3);
   }
+  50%{
+    opacity: 0.9;
+    transform: scale(1.1);
+  }
+  80%{
+    opacity: 1;
+    transform: scale(0.89);
+  }
+  100%{
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.ca-modal-image-container{
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.ca-image-modal{
+  width: 316px;
+  height: 289px;
+}
+
+.ca-modal-login-content, .ca-modal-signup-content{
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ca-member-login-form, .ca-member-signup-form{
+  width: 290px;
+}
+
+.ca-form-title{
+  font-family: Poppins-Bold;
+  font-weight: bold;
+  font-size: 24px;
+  color: #333;
+  line-height: 1.2;
+  text-align: center;
+  width: 100%;
+  display: block;
+  padding-bottom: 54px;
+}
+
+.ca-input-div{
+  position: relative;
+  height: 50px;
+  margin-bottom: 10px;
+  border-radius: 25px;
+  background-color: #e6e6e6;
+  display: flex;
+  padding-left: 35px;
+  padding-right: 35px;
+  align-items: center;
+}
+
+.ca-input-type1{
+  outline: none;
+  border: none;
+  background: #e6e6e6;
+  font-size: 20px;
+  width: 100%;
+}
+
+.ca-icon{
+  margin-right: 15px;
+  display: block;
+}
+
+.ca-login-button, .ca-signup-button{
+  width: 100%;
+  height: 100%;
+  font-size: 18px;
+  color: white;
+}
+
+.ca-login-btn, .ca-signin-btn{
+  margin-top: 20px;
+  background-color: #57b846;
+}
+
+.ca-signup-div{
+  text-align: center;
+  padding-top: 136px;
+}
+
+.ca-signup-btn{
+  color: #57b846;
+  font-size: 15px;
+}
