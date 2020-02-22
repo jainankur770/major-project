@@ -7,12 +7,16 @@
     <title>New Project</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/navbar.css">
+    <link rel="stylesheet" href="assets/css/login-modal.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 <body>
     <header class="ca-header">
@@ -24,19 +28,34 @@
                     <div class="ca-single-item ca-about"><a class="ca-nav-link" href="">About US</a></div>
                     <div class="ca-single-item ca-contact"><a class="ca-nav-link" href="">Contact</a></div>
                 </div>
-                <div class="ca-sign"><a class="ca-nav-link" href="#">Login/Signup</a></div>
+                <div class="ca-sign">
+                    <a class="ca-nav-link" id="login" href="#">Login/Signup</a>
+
+                    <div id="ca-modal-window"  class="ca-shadow" >
+                        <div class="ca-main-modal">
+                          <h1>Main Modal</h1>
+                          <button class="ca-modal-close">
+                            CLOSE MODAL
+                          </button>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="ca-navbar-items-resposive">
                 <div class="ca-items-responsive">
                     <div class="ca-item-responsive ca-logo-resposive">LOGO</div>
                 </div>
-                <div class="ca-sign-responsive"><a class="ca-nav-link-resposive" href="#"><i class="fa fa-bars"></i></a></div>
+                <div class="ca-sign-responsive">
+                    <a class="ca-nav-link-resposive" href="#">
+                        <i class="fa fa-bars"></i>
+                        <div id="ca-sidebar" class="ca-sidebar"></div>
+                    </a>
+                </div>
             </div>
         </nav>
     </header>
 
-    <div id="ca-sidebar" class="ca-sidebar"></div>
     <!-- <div>
         <label for="ca-id">Enter the ID</label>
         <input type="text" id="ca-id" value="" autocomplete="off">
@@ -44,5 +63,6 @@
     </div> -->
     <!-- <div class="ca-response"></div> -->
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/senddata-script.js"></script>
 </body>
 </html>
