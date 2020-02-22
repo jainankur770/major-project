@@ -2,41 +2,31 @@
 $(document).ready(function(){
     $('.ca-nav-link-resposive').click( function() {
         // alert('asdfaf');
-        $('.ca-sidebar').addClass('ca-sidebar-visible');
+        $('.ca-sidebar').css('transform','translateX(-100%)');
     } );
 });
 
 
 // Function to show hide the sidebar if anywhere outside is clicked.
 $(document).click( function(event) {
-    if (event.target.className != 'fa fa-bars' ) {
+    console.log(event);
+    if (event.target.className != 'fa fa-bars' && event.target.className != 'ca-sidebar ca-sidebar-visible') {
         console.log('yes');
-        $(".ca-sidebar").removeClass('ca-sidebar-visible');
+        $(".ca-sidebar").css('transform','translateX(0%)');
     }else{
         console.log('no');
     }
 });
 
-
-
-
-$(document).ready(function(){
-    $('#ca-submit').on( 'click', function() {
-        var id = $('#ca-id').val();
-        console.log(id);
-        $.ajax({
-            type: "POST",
-        
-            url: "http://127.0.0.1:5000/",
-            data: JSON.stringify({ query: id }),
-            success: function (response) {
-                $('.ca-response').html(response);
-            },
-            statusCode: {
-                404: function() {
-                    alert('data not found');
-                }
-            }
-        });
-    })
-});
+$('#login').click( function(){
+    $('#ca-modal-window').css('display','block');
+    $('.ca-main-modal').css('display','block');
+} );
+  
+$('.ca-modal-close').click( function(){
+    // Run the effect
+    $( '.ca-main-modal' ).effect( 'fold', 500 );
+    setTimeout( function(){
+        $('#ca-modal-window').css('display','none');
+    },510 );
+} );
