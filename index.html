@@ -38,16 +38,16 @@
                             </div>
 
                             <div class="ca-modal-login-content">
-                                <form class="ca-member-login-form" action="">
+                                <form class="ca-member-login-form" action="" method="POST">
                                     <div class="ca-form-title">LOGIN</div>
                                     <div class="ca-input-div">
-                                        <span class="ca-icon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
-                                        <input class="ca-input-type1" type="text">
+                                        <span class="ca-icon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                                        <input class="ca-input-type1" id="username_login" value="" type="text" placeholder="Username" required autocomplete="off">
                                     </div>
 
                                     <div class="ca-input-div">
                                         <span class="ca-icon"><i class="fa fa-key" aria-hidden="true"></i></span>
-                                        <input class="ca-input-type1" type="text">
+                                        <input class="ca-input-type1" id="password_login" value="" type="text" placeholder="Password" autocomplete="off">
                                     </div>
 
                                     <div class="ca-input-div ca-login-btn">
@@ -58,10 +58,10 @@
                                         <span>Don't have an account?<button id="signup" class="ca-signup-btn">Sign Up</button></span>
                                     </div>
                                 </form>
-                                <!-- <button class="ca-modal-close">
-                                    CLOSE MODAL
-                                </button> -->
                             </div>
+                            <button class="ca-modal-close">
+                                <i class="fa fa-times" aria-hidden="true"></i>
+                            </button>
                         </div>
                     </div>
 
@@ -72,16 +72,41 @@
                             </div>
 
                             <div class="ca-modal-signup-content">
-                                <form class="ca-member-signup-form" action="">
+                                <form class="ca-member-signup-form" action="" method="POST">
                                     <div class="ca-form-title">SIGN UP</div>
                                     <div class="ca-input-div">
                                         <span class="ca-icon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
-                                        <input class="ca-input-type1" type="text">
+                                        <input class="ca-input-type1" id="name_signup" type="text" placeholder="Name" autocomplete="off">
+                                    </div>
+
+                                    <div class="ca-input-div">
+                                        <span class="ca-icon"><i class="fa fa-address-book" aria-hidden="true"></i></span>
+                                        <input class="ca-input-type1" id="address_signup" type="text" placeholder="Address" autocomplete="off">
+                                    </div>
+
+                                    <div class="ca-input-div">
+                                        <span class="ca-icon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                                        <input class="ca-input-type1" id="age_signup" type="text" placeholder="Age" autocomplete="off">
+                                    </div>
+
+                                    <div class="ca-input-div">
+                                        <span class="ca-icon"><i class="fa fa-phone" aria-hidden="true"></i></span>
+                                        <input class="ca-input-type1" id="contact_signup" type="text" placeholder="Contact Number" autocomplete="off">
+                                    </div>
+
+                                    <div class="ca-input-div">
+                                        <span class="ca-icon"><i class="fa fa-credit-card-alt" aria-hidden="true"></i></span>
+                                        <input class="ca-input-type1" id="fund_signup" type="text" placeholder="Fund Raised" autocomplete="off">
+                                    </div>
+
+                                    <div class="ca-input-div">
+                                        <span class="ca-icon"><i class="fa fa-venus" aria-hidden="true"></i></span>
+                                        <input class="ca-input-type1" id="gender_signup" type="text" placeholder="Gender" autocomplete="off">
                                     </div>
 
                                     <div class="ca-input-div">
                                         <span class="ca-icon"><i class="fa fa-key" aria-hidden="true"></i></span>
-                                        <input class="ca-input-type1" type="text">
+                                        <input class="ca-input-type1" id="password_signup" type="text" placeholder="Password" autocomplete="off">
                                     </div>
 
                                     <div class="ca-input-div ca-signin-btn">
@@ -89,6 +114,9 @@
                                     </div>
                                 </form>
                             </div>
+                            <button class="ca-modal-close">
+                                <i class="fa fa-times" aria-hidden="true"></i>
+                            </button>
                         </div>
                     </div>
                 </div>

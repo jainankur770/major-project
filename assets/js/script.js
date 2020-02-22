@@ -1,3 +1,6 @@
+//Global Variable
+var query = "";
+
 // Function to show the sidebar.
 $(document).ready(function(){
     $('.ca-nav-link-resposive').click( function() {
@@ -18,6 +21,8 @@ $(document).click( function(event) {
 });
 
 $('#login').click( function(){
+    query = "Login";
+
     $('#ca-modal-login-window').css('display','block');
     $('.ca-main-login-modal').css('display','flex');
 } );
@@ -33,7 +38,6 @@ $('.ca-modal-close').click( function(){
 
 // Second Way - Function to show hide the sidebar if anywhere outside is clicked.
 $(document).mouseup(function (e) {
-    console.log(e.target);
     var container = $(".ca-main-login-modal, .ca-nav-link, .ca-main-signup-modal");
 
     if (!container.is(e.target) // if the target of the click isn't the container...
@@ -43,15 +47,30 @@ $(document).mouseup(function (e) {
         $( '.ca-main-login-modal, .ca-main-signup-modal' ).effect( 'fold', 500 );
         setTimeout( function(){
             $('#ca-modal-login-window, #ca-modal-signup-window').css('display','none');
+
+            //removing all the input field value.
+            $('input').val('');
         },500 );
     }
 });
 
 $('#signup').click( function(){
+    query = "Signup";
+
     $('#ca-modal-login-window').css('display','none');
     $('.ca-main-login-modal').css('display','none');
 
     $('#ca-modal-signup-window').css('display','block');
     $('.ca-main-signup-modal').css('display','flex');
 
+} );
+
+//When focused move icon.
+$('.ca-input-type1').focusin( function(){
+    $(this).siblings('.ca-icon').css( 'transform', 'translateX(-12px)' );
+} );
+
+//When out focused get icon to the original position.
+$('.ca-input-type1').focusout( function(){
+    $(this).siblings('.ca-icon').css( 'transform', 'translateX(0px)' );
 } );
