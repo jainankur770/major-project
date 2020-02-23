@@ -40,7 +40,8 @@ def index():
             #if rows > 0 :
             #then return j
             #else return 0
-            rows.append(Taken_care_by)
+                for tcb in Taken_care_by:
+                    rows.append(tcb)
 
             j=jsonify({"name":rows[0],"age":rows[1],"fund_raised":rows[2],"contact":rows[3],"review":rows[4],"rating":rows[5],"taken_care_by":rows[6]})
             print(rows)
