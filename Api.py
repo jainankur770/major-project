@@ -16,9 +16,9 @@ CORS(ank, support_credentials=True)
 def index():
     users = request.form["query"]
     print(users)
-    if users=="Login":
+    if users=="Login" or users=="login":
         user_type=request.form["user_type"]
-        if user_type =="Old":
+        if user_type =="Old" or "old":
             print(user_type)
             user=request.form["Id"]
             print(user)
@@ -40,16 +40,18 @@ def index():
             #if rows > 0 :
             #then return j
             #else return 0
-            j=jsonify(rows,Taken_care_by)
-            print(j)
+            rows.append(Taken_care_by)
+
+            j=jsonify({"name":rows[0],"age":rows[1],"fund_raised":rows[2],"contact":rows[3],"review":rows[4],"rating":rows[5],"taken_care_by":rows[6]})
+            print(rows)
             return(j)
-        elif user_type=="Young":
+        elif user_type=="Young" or user_type=="young":
             #young login
             print("to be made")
-    elif users=="Signup":
+    elif users=="Signup" or users=="signup":
         print(users)
         user_type=request.args.get("user_type")
-        if user_type =="Old":
+        if user_type =="Old" or user_type=="old":
             name=request.args.get("name")
             age=request.args.get("age")
             fund_raised=request.args.get("fund_raised")
@@ -68,7 +70,7 @@ def index():
             i=jsonify(i)
             print(i)
             return(i)
-        elif user_type=="Young":
+        elif user_type=="Young" or user_type=="young":
             name=request.args.get("name")
             age=request.args.get("age")
             address=request.args.get("address")

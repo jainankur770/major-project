@@ -12,7 +12,7 @@ $(document).ready(function(){
             dataType: "json",
             data: { query: query, user_type : user_type[0], Id : user_type[1] },
             success: function (response) {
-                alert(response);
+                console.log(response);
             },
             statusCode: {
                 404: function() {
