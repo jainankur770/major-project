@@ -10,7 +10,7 @@ $(document).ready(function(){
             type: "POST",
             url: "http://127.0.0.1:5000/",
             dataType: "json",
-            data: { query: query, user_type : user_type[0], Id : user_type[1] },
+            data: { query: query, user_type : user_type[0], Id : user_type[1], password : password},
             success: function (response) {
                 console.log(response);
             },
