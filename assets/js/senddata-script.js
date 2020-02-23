@@ -1,5 +1,7 @@
 $(document).ready(function(){
-    $('.ca-login-button').on( 'click', function() {
+    $('#ca-login-form').on( 'submit', function(e) {
+        e.preventDefault();
+
         var username = $('#username_login').val();
         var user_type = username.split('_');
         var password = $('#password_login').val();
@@ -7,7 +9,7 @@ $(document).ready(function(){
         $.ajax({
             type: "POST",
             url: "http://127.0.0.1:5000/",
-            data: { query: query, user_type : user_type[0], ID : user_type[1] },
+            data: { query: query, user_type : user_type[0], Id : user_type[1] },
             success: function (response) {
                 alert(response);
             },
