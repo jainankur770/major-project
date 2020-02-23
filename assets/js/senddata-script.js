@@ -12,7 +12,8 @@ $(document).ready(function(){
             dataType: "json",
             data: { query: query, user_type : user_type[0], Id : user_type[1] },
             success: function (response) {
-                console.log(response);
+                var login_details = JSON.stringify(response);
+                console.log( login_details );
             },
             statusCode: {
                 404: function() {
