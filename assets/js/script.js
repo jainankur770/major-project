@@ -23,6 +23,8 @@ $(document).click( function(event) {
 $('#login').click( function(){
     query = "Login";
 
+    //To prevent body from scrolling when modal is opened.
+    $('body').css('overflow','hidden');
     $('#ca-modal-login-window').css('display','block');
     $('.ca-main-login-modal').css('display','flex');
 } );
@@ -43,6 +45,8 @@ $(document).mouseup(function (e) {
     if (!container.is(e.target) // if the target of the click isn't the container...
         && container.has(e.target).length === 0) // ... nor a descendant of the container
     {
+        //To restore body scrolling.
+        $('body').css('overflow','auto');
         // Run the effect
         $( '.ca-main-login-modal, .ca-main-signup-modal' ).effect( 'fold', 500 );
         setTimeout( function(){
