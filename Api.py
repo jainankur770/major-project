@@ -14,17 +14,19 @@ CORS(ank, support_credentials=True)
 @ank.route("/",methods = ['GET','POST'])
 @cross_origin(supports_credentials=True)
 def index():
-    users = request.args.get("query")
+    users = request.form["query"]
     print(users)
     if users=="Login":
-        user_type=request.args.get("user_type")
+        user_type=request.form["user_type"]
         if user_type =="Old":
-            user=request.args.get("Id")
+            print(user_type)
+            user=request.form["Id"]
             print(user)
             d="SELECT Name,Age,Fund_raised,Contact,Review,Rating FROM elder_details WHERE Id"+"="+user+";"
             id="SELECT Taken_care_by FROM elder_details WHERE Id" + "="+user+";"
             cursor.execute(d)
             rows = list(cursor.fetchone())
+            print(rows)
             cursor.execute(id)
             id=cursor.fetchone()
             print(id)
@@ -33,11 +35,13 @@ def index():
                 print(Taken_care_by)
                 cursor.execute(Taken_care_by)
                 Taken_care_by=cursor.fetchone()
+                print(Taken_care_by)
             #rows=rows.append(Taken_care_by)
             #if rows > 0 :
             #then return j
             #else return 0
             j=jsonify(rows,Taken_care_by)
+            print(j)
             return(j)
         elif user_type=="Young":
             #young login
