@@ -23,7 +23,7 @@ def index():
             user=request.form["Id"]
             password=request.form["password"]
             print(user,password)
-            d='SELECT Name,Age,Fund_raised,Contact,Review,Rating FROM elder_details WHERE Id'+'="'+user+'"AND Password'+' = "'+str(password)+'";'
+            d='SELECT Name,Age,Fund_raised,Address,Contact,Review,Rating FROM elder_details WHERE Id'+'="'+user+'"AND Password'+' = "'+str(password)+'";'
             print(d)
             id="SELECT Taken_care_by FROM elder_details WHERE Id" + "="+user+";"
             cursor.execute(d)
@@ -48,7 +48,7 @@ def index():
             #else return 0
                     for tcb in Taken_care_by:
                         rows.append(tcb)
-            j=jsonify({"name":rows[0],"age":rows[1],"fund_raised":rows[2],"contact":rows[3],"review":rows[4],"rating":rows[5],"taken_care_by":rows[6]})
+            j=jsonify({"name":rows[0],"age":rows[1],"fund_raised":rows[2],"address":rows[3],"contact":rows[4],"review":rows[5],"rating":rows[6],"taken_care_by":rows[7]})
             print(rows)
             return(j)
         elif user_type=="Young" or user_type=="young":
@@ -89,9 +89,10 @@ def index():
             age=request.form["age"]
             fund_raised=request.form["fund_raised"]
             password= request.form["password"]
+            address=request.form["address"]
             contact_no=request.form["contact_no"]
-            sql="INSERT INTO elder_details(Password,Name,Age,Fund_raised,Contact) VALUES (%s,%s, %s,%s,%s)"
-            val=(str(password),str(name),age,fund_raised,contact_no)
+            sql="INSERT INTO elder_details(Password,Name,Age,Fund_raised,Address,Contact) VALUES (%s,%s,%s,%s,%s,%s)"
+            val=(str(password),str(name),age,fund_raised,address,contact_no)
             print(sql,val)
             cursor.execute(sql,val)
             connection.commit()
