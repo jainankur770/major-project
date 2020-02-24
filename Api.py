@@ -120,7 +120,17 @@ def index():
             i="Young_"+str(i[0])
             i=jsonify({"id":i})
             return(i)
-        
+    elif users =="contact_us":
+        email=request.form["email"]
+        message=request.form["message"]
+        sql="INSERT INTO contact (Email,Message) VALUES (%s,%s)"
+        val=(str(email),str(message))
+        cursor.execute(sql,val)
+        connection.commit()
+        i="Thank you for your intrest, our executive will reach out to you soon"
+        i=jsonify({"text":i})
+        return(i)
+
 
 if __name__ == "__main__":
     ank.run(debug=True,host='127.0.0.1', port=5000)
