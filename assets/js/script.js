@@ -53,7 +53,10 @@ $(document).mouseup(function (e) {
             $('#ca-modal-login-window, #ca-modal-signup-window').css('display','none');
 
             //removing all the input field value.
-            $('input').val('');
+            $('input[type=text]').val('');
+
+            //removing all the radio checked property.
+            $("input[type=radio]").prop("checked", false);
         },500 );
     }
 });

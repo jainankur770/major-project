@@ -15,6 +15,10 @@
     width: 590px;
 }
 
+.ca-background-image-content{
+    text-align: justify;
+}
+
 @media only screen and (max-width: 500px) {
     .ca-background-image-content{
         margin-top: 30vh;

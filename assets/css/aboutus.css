@@ -1,0 +1,84 @@
+.ca-section-aboutus{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.ca-section-heading{
+    text-align: center;
+}
+
+.ca-section-heading h1{
+    letter-spacing: 6px;
+    word-spacing: 30px;
+}
+
+.ca-section-container{
+    display: flex;
+    width: 90%;
+    margin: auto;
+    margin-top: 35px;
+    min-height: 400px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.ca-section-parent-container :nth-child(2n){
+    flex-direction: row-reverse;
+}
+
+.ca-section-content{
+    width: 50%;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    text-align: center;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.ca-section-content p{
+    padding: 2.5rem;
+    line-height: 27px;
+    font-size: 18px;
+}
+
+.ca-section-content h2{
+    letter-spacing: 3px;
+}
+
+.ca-section-image{
+    width: 50%;
+    padding: 0 15px;
+}
+
+.ca-section-image img{
+    width: 100%;
+    height: 100%;
+    box-shadow: 6px 6px 5px #aaaaaa;
+}
+
+@media only screen and (max-width: 1000px) {
+    .ca-section-parent-container :nth-child(2n){
+        flex-direction: row;
+    }
+
+    .ca-section-container{
+        display: block;
+        width: 100%;
+    }
+
+    .ca-section-content{
+        padding-left: 0;
+        padding-right: 0;
+        width: 100%;
+    }
+
+    .ca-section-image{
+        width: 100%;
+        padding: 0;
+    }
+
+    .ca-section-image > div{
+        width: 90%;
+        margin: auto;
+    }
+}

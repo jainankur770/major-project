@@ -9,7 +9,12 @@
     <link rel="stylesheet" href="assets/css/navbar.css">
     <link rel="stylesheet" href="assets/css/login-modal.css">
     <link rel="stylesheet" href="assets/css/header-content.css">
-    <link rel="stylesheet" href="assets/css/main-content.css">
+    <link rel="stylesheet" href="assets/css/aboutus.css">
+    <link rel="stylesheet" href="assets/css/testimonial.css">
+    <link rel="stylesheet" href="assets/css/contact.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+
+
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -74,7 +79,7 @@
                             </div>
 
                             <div class="ca-modal-signup-content">
-                                <form class="ca-member-signup-form" action="" method="POST">
+                                <form class="ca-member-signup-form" id="ca-signup-form" action="" method="POST">
                                     <div class="ca-form-title">SIGN UP</div>
                                     <div class="ca-input-div">
                                         <span class="ca-icon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
@@ -104,6 +109,13 @@
                                     <div class="ca-input-div">
                                         <span class="ca-icon"><i class="fa fa-venus" aria-hidden="true"></i></span>
                                         <input class="ca-input-type1" id="gender_signup" type="text" placeholder="Gender" autocomplete="off">
+                                    </div>
+
+                                    <div class="ca-input-div ca-radio-signup">
+                                        <label for="young">Young
+                                        <input class="ca-input-type2" id="young" type="radio" name="user_type" value="young"></label>
+                                        <label for="old">Old
+                                        <input class="ca-input-type2" id="old" type="radio" name="user_type" value="old"></label>
                                     </div>
 
                                     <div class="ca-input-div">
@@ -147,32 +159,98 @@
     
     <!-- main section begins -->
     <div class="ca-main-section-container">
-        <div id="aboutus"><h1>About Us</h1></div>
+        <div class="ca-section-aboutus">
+            <div class="ca-section-heading" id="aboutus"><h1>About Us</h1></div>
 
-        <div class="ca-section-parent-container">
-            <section class="ca-section-container">
-                <div class="ca-section-content">
-                    <h2>Heading</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, distinctio ducimus. Praesentium quod ex reprehenderit veritatis error ipsa nobis facilis magnam, reiciendis impedit veniam corrupti obcaecati dolores quo alias deserunt!</p>
-                </div>
-                <div class="ca-section-image">
-                    <img src="/assets/images/section-image1.jpg" alt="image">
-                </div>
-            </section>
+            <div class="ca-section-parent-container">
+                <section class="ca-section-container">
+                    <div class="ca-section-content">
+                        <h2>Heading</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, distinctio ducimus. Praesentium quod ex reprehenderit veritatis error ipsa nobis facilis magnam, reiciendis impedit veniam corrupti obcaecati dolores quo alias deserunt!</p>
+                    </div>
+                    <div class="ca-section-image">
+                        <div>
+                            <img src="/assets/images/section-image1.jpg" alt="image">
+                        </div>
+                    </div>
+                </section>
 
-            <section class="ca-section-container">
-                <div class="ca-section-content">
-                    <h2>Heading</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, distinctio ducimus. Praesentium quod ex reprehenderit veritatis error ipsa nobis facilis magnam, reiciendis impedit veniam corrupti obcaecati dolores quo alias deserunt!</p>
+                <section class="ca-section-container">
+                    <div class="ca-section-content">
+                        <h2>Heading</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, distinctio ducimus. Praesentium quod ex reprehenderit veritatis error ipsa nobis facilis magnam, reiciendis impedit veniam corrupti obcaecati dolores quo alias deserunt!</p>
+                    </div>
+                    <div class="ca-section-image">
+                        <div>
+                            <img src="/assets/images/section-image2.jpg" alt="image">
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <div class="ca-section-testimonial">
+            <div class="ca-section-heading" id="testimonial"><h1>What Are Fantastic Client Say</h1></div>
+
+            <div class="ca-section-parent-testimonial-container">
+                <section class="ca-section-testimonial-container">
+                    <div class="ca-section-testimonial-image">
+                        <img src="assets/images/client1.jpg" alt="client-image">
+                    </div>
+                    <div class="ca-section-testimonial-content">
+                        <p>"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde odit nisi culpa officia quam perferendis praesentium sed beatae quas, hic obcaecati atque numquam maiores nobis saepe porro natus dolor dignissimos."</p>
+                        <p class="ca-testimonial-author"><strong>Author</strong></p>
+                    </div>
+                </section>
+
+                <section class="ca-section-testimonial-container">
+                    <div class="ca-section-testimonial-image">
+                        <img src="assets/images/client1.jpg" alt="client-image">
+                    </div>
+                    <div class="ca-section-testimonial-content">
+                        <p>"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde odit nisi culpa officia quam perferendis praesentium sed beatae quas, hic obcaecati atque numquam maiores nobis saepe porro natus dolor dignissimos."</p>
+                        <p class="ca-testimonial-author ca-even-testimonial-author"><strong>Author</strong></p>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <div class="ca-section-contact">
+            <div class="ca-section-heading" id="contact"><h1>Contact Us</h1></div>
+
+            <section class="ca-section-contact-container">
+                <div class="ca-contact-form-container">
+                    <h2>Get In Touch</h2>
+                    <p>Our manager shall contact after.</p>
+                    <form id="ca-contact-form" action="" method="POST">
+                        <div class="ca-contact-email-div">
+                            <label for="ca-contact-email">E-mail</label>
+                            <input id="ca-contact-email" type="text">
+                        </div>
+
+                        <div class="ca-contact-message-div">
+                            <label for="ca-contact-message">Message</label>
+                            <textarea id="ca-contact-message" type="text"></textarea>
+                        </div>
+
+                        <div class="ca-input-div ca-contact-btn">
+                            <button class="ca-contact-button" type="button">Contact</button>
+                        </div>
+                    </form>
                 </div>
-                <div class="ca-section-image">
-                    <img src="/assets/images/section-image2.jpg" alt="image">
+
+                <div class="ca-googlemap-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3629.699659536953!2d73.77224921499636!3d24.530472884210575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3967e91ee890913f%3A0x3c9f7e227cd209ea!2sSS%20College%20Of%20Engineering!5e0!3m2!1sen!2sin!4v1582478942481!5m2!1sen!2sin" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
                 </div>
             </section>
         </div>
     </div>
 
-    <footer class="ca-footer">© Copyright 2018 Care All - All Rights Reserved</footer>
+    <footer class="ca-footer">
+        <div class="ca-footer-content">
+            © Copyright 2018 Care All - All Rights Reserved
+        </div>
+    </footer>
 
     <script src="assets/js/script.js"></script>
     <script src="assets/js/senddata-script.js"></script>

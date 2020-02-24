@@ -23,7 +23,7 @@
   padding: 40px 40px;
   border: 1px solid #888;
   width: 80%;
-  min-height: 80vh;
+  height: 80vh;
   border-radius: 10px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
   animation-name: bounceIn;
@@ -115,14 +115,14 @@
   transition: transform 0.2s linear;
 }
 
-.ca-login-button, .ca-signup-button{
+.ca-login-button, .ca-signup-button, .ca-contact-button{
   width: 100%;
   height: 100%;
   font-size: 18px;
   color: white;
 }
 
-.ca-login-btn, .ca-signin-btn{
+.ca-login-btn, .ca-signin-btn, .ca-contact-btn{
   margin-top: 20px;
   background-color: #57b846;
 }
@@ -142,4 +142,14 @@
   right: 25px;
   top: 25px;
   font-size: 30px;
+}
+
+.ca-radio-signup{
+  justify-content: space-between;
+  font-size: 18px;
+  background-color: white;
+}
+
+.ca-radio-signup input{
+  margin-left: 5px;
 }
