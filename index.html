@@ -31,12 +31,12 @@
             <div class="ca-navbar-items">
                 <div class="ca-items">
                     <div class="ca-item ca-logo">LOGO</div>
-                    <div class="ca-single-item ca-home"><a class="ca-nav-link" href="">Home</a></div>
-                    <div class="ca-single-item ca-about"><a class="ca-nav-link" href="">About US</a></div>
-                    <div class="ca-single-item ca-contact"><a class="ca-nav-link" href="">Contact</a></div>
+                    <div class="ca-single-item ca-home"><a class="ca-nav-link" href="#home">Home</a></div>
+                    <div class="ca-single-item ca-about"><a class="ca-nav-link" href="#aboutus">About US</a></div>
+                    <div class="ca-single-item ca-contact"><a class="ca-nav-link" href="#contact">Contact</a></div>
                 </div>
                 <div class="ca-sign">
-                    <a class="ca-nav-link" id="login" href="#">Login/Signup</a>
+                    <a class="ca-nav-link ca-nav-login" href="#">Login/Signup</a>
 
                     <div id="ca-modal-login-window"  class="ca-shadow-login" >
                         <div class="ca-main-login-modal">
@@ -54,7 +54,7 @@
 
                                     <div class="ca-input-div">
                                         <span class="ca-icon"><i class="fa fa-key" aria-hidden="true"></i></span>
-                                        <input class="ca-input-type1" id="password_login" value="" type="text" placeholder="Password" autocomplete="off">
+                                        <input class="ca-input-type1" id="password_login" value="" type="password" placeholder="Password" autocomplete="off">
                                     </div>
 
                                     <div class="ca-input-div ca-login-btn">
@@ -106,11 +106,6 @@
                                         <input class="ca-input-type1" id="fund_signup" type="text" placeholder="Fund Raised" autocomplete="off">
                                     </div>
 
-                                    <div class="ca-input-div">
-                                        <span class="ca-icon"><i class="fa fa-venus" aria-hidden="true"></i></span>
-                                        <input class="ca-input-type1" id="gender_signup" type="text" placeholder="Gender" autocomplete="off">
-                                    </div>
-
                                     <div class="ca-input-div ca-radio-signup">
                                         <label for="young">Young
                                         <input class="ca-input-type2" id="young" type="radio" name="user_type" value="young"></label>
@@ -120,11 +115,11 @@
 
                                     <div class="ca-input-div">
                                         <span class="ca-icon"><i class="fa fa-key" aria-hidden="true"></i></span>
-                                        <input class="ca-input-type1" id="password_signup" type="text" placeholder="Password" autocomplete="off">
+                                        <input class="ca-input-type1" id="password_signup" type="password" placeholder="Password" autocomplete="off">
                                     </div>
 
                                     <div class="ca-input-div ca-signin-btn">
-                                        <button class="ca-signup-button" type="button">Sign In</button>
+                                        <button class="ca-signup-button" type="submit">Sign In</button>
                                     </div>
                                 </form>
                             </div>
@@ -133,6 +128,33 @@
                             </button>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <div class="ca-navbar-items-resposive">
+                <div class="ca-items-responsive">
+                    <div class="ca-item-responsive ca-logo-resposive">LOGO</div>
+                </div>
+                <div class="ca-sign-responsive">
+                    <a class="ca-nav-link-resposive" href="#">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <div id="ca-sidebar" class="ca-sidebar"></div>
+
+        <nav class="ca-navbar ca-navbar-scroll">
+            <div class="ca-navbar-items">
+                <div class="ca-items">
+                    <div class="ca-item ca-logo">LOGO</div>
+                    <div class="ca-single-item ca-home"><a class="ca-nav-link" href="#home">Home</a></div>
+                    <div class="ca-single-item ca-about"><a class="ca-nav-link" href="#aboutus">About US</a></div>
+                    <div class="ca-single-item ca-contact"><a class="ca-nav-link" href="#contact">Contact</a></div>
+                </div>
+                <div class="ca-sign">
+                    <a class="ca-nav-link ca-nav-login" href="#">Login/Signup</a>
                 </div>
             </div>
 
@@ -234,13 +256,13 @@
                         </div>
 
                         <div class="ca-input-div ca-contact-btn">
-                            <button class="ca-contact-button" type="button">Contact</button>
+                            <button class="ca-contact-button" type="button">Contact Now</button>
                         </div>
                     </form>
                 </div>
 
                 <div class="ca-googlemap-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3629.699659536953!2d73.77224921499636!3d24.530472884210575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3967e91ee890913f%3A0x3c9f7e227cd209ea!2sSS%20College%20Of%20Engineering!5e0!3m2!1sen!2sin!4v1582478942481!5m2!1sen!2sin" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3629.699659536953!2d73.77224921499636!3d24.530472884210575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3967e91ee890913f%3A0x3c9f7e227cd209ea!2sSS%20College%20Of%20Engineering!5e0!3m2!1sen!2sin!4v1582478942481!5m2!1sen!2sin" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" alt="google map"></iframe>
                 </div>
             </section>
         </div>

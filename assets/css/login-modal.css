@@ -2,7 +2,6 @@
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
-  padding-top: 30px; /* Location of the box */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
@@ -21,9 +20,10 @@
   background-color: #fefefe;
   margin: auto;
   padding: 40px 40px;
+  margin-top: 10px;
   border: 1px solid #888;
   width: 80%;
-  height: 80vh;
+  height: 700px;
   border-radius: 10px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
   animation-name: bounceIn;

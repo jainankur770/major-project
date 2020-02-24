@@ -12,7 +12,7 @@ $(document).ready(function(){
 
 // First Way - Function to show hide the sidebar if anywhere outside is clicked.
 $(document).click( function(event) {
-    if (event.target.className != 'fa fa-bars' && event.target.className != 'ca-sidebar ca-sidebar-visible') {
+    if (event.target.className != 'fa fa-bars' && event.target.className != 'ca-sidebar') {
         console.log('yes');
         $(".ca-sidebar").css('transform','translateX(0%)');
     }else{
@@ -20,7 +20,7 @@ $(document).click( function(event) {
     }
 });
 
-$('#login').click( function(){
+$('.ca-nav-login').click( function(){
     query = "Login";
 
     //To prevent body from scrolling when modal is opened.
@@ -81,3 +81,35 @@ $('.ca-input-type1').focusin( function(){
 $('.ca-input-type1').focusout( function(){
     $(this).siblings('.ca-icon').css( 'transform', 'translateX(0px)' );
 } );
+
+
+// When the user scrolls down 20px from the top of the document, slide down the navbar
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    $('.ca-navbar-scroll').css('top','0');
+  } else {
+    $('.ca-navbar-scroll').css('top','-90px');
+  }
+}
+
+// for smooth scrolling of the home page when navbar items are clicked.
+$("a[href='#aboutus'],a[href='#contact']").click(function(e) {
+	e.preventDefault();
+	
+	var position = $($(this).attr("href")).offset().top - 90;
+
+	$("body, html").animate({
+		scrollTop: position
+	},800 );
+});
+
+
+$("a[href='#home']").click(function(e) {
+	e.preventDefault();
+	
+	$("body, html").animate({
+		scrollTop: 0
+	},800 );
+});
