@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 24, 2020 at 05:48 PM
+-- Generation Time: Feb 24, 2020 at 06:40 PM
 -- Server version: 10.3.15-MariaDB
 -- PHP Version: 7.3.6
 
@@ -21,6 +21,19 @@ SET time_zone = "+00:00";
 --
 -- Database: `careall`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contact`
+--
+
+CREATE TABLE `contact` (
+  `Date` date NOT NULL,
+  `Time` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `Email` varchar(25) NOT NULL,
+  `Message` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
