@@ -42,7 +42,7 @@ $(document).ready(function(){
         var age         = $('#age_signup').val();
         var contact     = $('#contact_signup').val();
         var fund        = $('#fund_signup').val();
-        var user_type   = $('.ca-input-type2').val();
+        var user_type   = $('input[name="user_type"]:checked').val();
         var password    = $('#password_signup').val();
 
         $.ajax({
