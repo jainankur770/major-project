@@ -33,12 +33,12 @@
 }
 
 .ca-items, .ca-items-responsive{
-    width: 85%;
+    width: 80%;
     display: flex;
 }
 
 .ca-sign, .ca-sign-responsive{
-    width: 15%;
+    width: 20%;
 }
 
 .ca-sign-responsive{
@@ -52,9 +52,8 @@
 }
 
 .ca-single-item{
-    width: 12%;
     text-align: center;
-    margin-right: 10px;
+    margin-right: 40px;
 }
 
 .ca-nav-link{
@@ -72,7 +71,7 @@
   left: 0;
   background-color: #FFF;
   visibility: hidden;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in;
 }
 
 .ca-nav-link:hover:before {
@@ -86,19 +85,65 @@
 
 .ca-sidebar{
     position: fixed;
+    padding: 30px 10px;
     top: 0;
     width: 300px;
     height: 100%;
-    left: 100%;
+    left: 101%;
     bottom: 0;
     background-color: white;
     z-index: 10;
     transform: translateX(0%);
-    transition: transform 0.23s cubic-bezier( 0.32, 0.01, 0, 1 );
+    transition: transform 0.33s cubic-bezier( 0.32, 0.01, 0, 1 );
+    box-shadow: -3px 0px 5px #aaaaaa;
+}
+
+.ca-sidebar-msg{
+    color: black;
 }
 
 .ca-sidebar-visible{
     transform: translateX(-100%);
+}
+
+.ca-sidebar-container{
+    width: 100%;
+}
+
+.ca-sidebar-items{
+    text-align: left;
+    padding-left: 30px;
+    font-weight: bolder;
+}
+
+.ca-single-sidebar-item{
+    line-height: 60px;
+    color: black;
+}
+
+.ca-sidebar-link{
+    color: black;
+}
+
+.ca-sidebar-login{
+    margin-top: 190px;
+}
+
+.ca-sidebar-link:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #000000;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.ca-sidebar-link:hover:before {
+    visibility: visible;
+    width: 100%;
 }
 
 .ca-navbar-scroll{

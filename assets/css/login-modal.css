@@ -23,7 +23,7 @@
   margin-top: 10px;
   border: 1px solid #888;
   width: 80%;
-  height: 700px;
+  height: 96%;
   border-radius: 10px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
   animation-name: bounceIn;
@@ -72,12 +72,16 @@
   justify-content: center;
 }
 
+#ca-signup-form{
+  display: none;
+}
+
 .ca-member-login-form, .ca-member-signup-form{
+  line-height: normal;
   width: 290px;
 }
 
 .ca-form-title{
-  font-family: Poppins-Bold;
   font-weight: bold;
   font-size: 24px;
   color: #333;
@@ -125,6 +129,11 @@
 .ca-login-btn, .ca-signin-btn, .ca-contact-btn{
   margin-top: 20px;
   background-color: #57b846;
+  transition: background-color 0.2s ease-in;
+}
+
+.ca-login-btn:hover, .ca-signin-btn:hover, .ca-contact-btn:hover{
+  background-color: #469338;
 }
 
 .ca-signup-div{
@@ -144,12 +153,26 @@
   font-size: 30px;
 }
 
-.ca-radio-signup{
-  justify-content: space-between;
-  font-size: 18px;
-  background-color: white;
+.ca-young-button, .ca-old-button{
+  font-size: 25px;
+  width: 100%;
+  outline: none;
 }
 
-.ca-radio-signup input{
-  margin-left: 5px;
+@media only screen and (max-width: 1000px) {
+  .ca-main-login-modal, .ca-main-signup-modal{
+    padding: 20px;
+  }
+
+  .ca-modal-image-container{
+    display: none;
+  }
+
+  .ca-modal-login-content, .ca-modal-signup-content{
+    width: 100%;
+  }
+
+  .ca-signup-btn{
+    margin-top: 10px;
+  }
 }

@@ -1,5 +1,6 @@
 //Global Variable
 var query = "";
+var user_type = "";
 
 // Function to show the sidebar.
 $(document).ready(function(){
@@ -31,9 +32,9 @@ $('.ca-nav-login').click( function(){
   
 $('.ca-modal-close').click( function(){
     // Run the effect
-    $( '.ca-main-login-modal' ).effect( 'fold', 500 );
+    $( '.ca-main-login-modal, .ca-main-signup-modal' ).effect( 'fold', 500 );
     setTimeout( function(){
-        $('#ca-modal-login-window').css('display','none');
+        $('#ca-modal-login-window, #ca-modal-signup-window').css('display','none');
     },500 );
 } );
 
@@ -69,6 +70,9 @@ $('#signup').click( function(){
 
     $('#ca-modal-signup-window').css('display','block');
     $('.ca-main-signup-modal').css('display','flex');
+
+    $('#ca-user-type').css( 'display', 'block' );
+    $('#ca-signup-form').css( 'display', 'none' );
 
 } );
 
@@ -106,10 +110,30 @@ $("a[href='#aboutus'],a[href='#contact']").click(function(e) {
 });
 
 
+// for smooth scrolling of the home page when navbar items are clicked.
 $("a[href='#home']").click(function(e) {
 	e.preventDefault();
 	
 	$("body, html").animate({
 		scrollTop: 0
 	},800 );
+});
+
+
+//Form field changes according to the value young old.
+$('.ca-user').on('click', function() {
+    if( $(this).val() === 'young' ) {
+        //global var init
+        user_type = $(this).val();
+
+        $('#ca-fund').css( 'display', 'none' );
+        $('#ca-user-type').css( 'display', 'none' );
+        $('#ca-signup-form').css( 'display', 'block' );
+    } else {
+        user_type = $(this).val();
+
+        $('#ca-fund').css( 'display', 'flex' );
+        $('#ca-user-type').css( 'display', 'none' );
+        $('#ca-signup-form').css( 'display', 'block' );
+    }
 });
