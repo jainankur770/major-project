@@ -1,6 +1,7 @@
 //Global Variable
 var query = "";
 var user_type = "";
+var loggedin_username = "";
 
 // Function to show the sidebar.
 $(document).ready(function(){
@@ -55,9 +56,6 @@ $(document).mouseup(function (e) {
 
             //removing all the input field value.
             $('input[type=text]').val('');
-
-            //removing all the radio checked property.
-            $("input[type=radio]").prop("checked", false);
         },500 );
     }
 });
@@ -98,27 +96,6 @@ function scrollFunction() {
   }
 }
 
-// for smooth scrolling of the home page when navbar items are clicked.
-$("a[href='#aboutus'],a[href='#contact']").click(function(e) {
-	e.preventDefault();
-	
-	var position = $($(this).attr("href")).offset().top - 90;
-
-	$("body, html").animate({
-		scrollTop: position
-	},800 );
-});
-
-
-// for smooth scrolling of the home page when navbar items are clicked.
-$("a[href='#home']").click(function(e) {
-	e.preventDefault();
-	
-	$("body, html").animate({
-		scrollTop: 0
-	},800 );
-});
-
 
 //Form field changes according to the value young old.
 $('.ca-user').on('click', function() {
@@ -137,3 +114,11 @@ $('.ca-user').on('click', function() {
         $('#ca-signup-form').css( 'display', 'block' );
     }
 });
+
+
+if (document.cookie.indexOf('username') !== -1 ) {
+    $('.ca-nav-login').css( 'display', 'none' );
+    console.log( 'asdf'+loggedin_username );
+    document.querySelector('.ca-nav-user').innerHTML= document.cookie;
+    $('.ca-nav-user').css( 'display', 'initial' );
+}
