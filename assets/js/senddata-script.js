@@ -26,7 +26,7 @@ $(document).ready(function(){
                 document.cookie = "username=" + response.name + "; path=/;";
                 alert( response.name );
                 $('#ca-login-user-content').html(response);
-                window.location.replace("../includes/dashboard.html");
+                //window.location.replace("../includes/dashboard.html");
                 
                 console.log( response );
             },

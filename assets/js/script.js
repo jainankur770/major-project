@@ -41,7 +41,7 @@ $('.ca-modal-close').click( function(){
 
 
 // Second Way - Function to show hide the sidebar if anywhere outside is clicked.
-$(document).mouseup(function (e) {
+$(document).click(function (e) {
     var container = $(".ca-main-login-modal, .ca-nav-link, .ca-main-signup-modal");
 
     if (!container.is(e.target) // if the target of the click isn't the container...
@@ -55,7 +55,7 @@ $(document).mouseup(function (e) {
             $('#ca-modal-login-window, #ca-modal-signup-window').css('display','none');
 
             //removing all the input field value.
-            $('input[type=text]').val('');
+            $('.ca-input-type1').val('');
         },500 );
     }
 });
@@ -119,6 +119,6 @@ $('.ca-user').on('click', function() {
 if (document.cookie.indexOf('username') !== -1 ) {
     $('.ca-nav-login').css( 'display', 'none' );
     console.log( 'asdf'+loggedin_username );
-    document.querySelector('.ca-nav-user').innerHTML= document.cookie;
+    //document.querySelector('.ca-nav-user').innerHTML= document.cookie;
     $('.ca-nav-user').css( 'display', 'initial' );
 }
