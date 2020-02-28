@@ -81,6 +81,8 @@ def index():
             j=jsonify({"name":rows[0],"age":rows[1],"Address":rows[2],"contact":rows[3],"review":rows[4],"rating":rows[5],"taking_care_of":rows[6]})
             print(rows)
             return(j)
+        else:
+            return(jsonify("Invalid Credentials"))
     elif users=="Signup" or users=="signup":
         print(users)
         user_type=request.form["user_type"]
@@ -120,11 +122,14 @@ def index():
             i="Young_"+str(i[0])
             i=jsonify({"id":i})
             return(i)
+        else:
+            return(jsonify("Something went wrong, please try again later"))
     elif users =="contact_us":
         email=request.form["email"]
         message=request.form["message"]
-        sql="INSERT INTO contact (Email,Message) VALUES (%s,%s)"
+        sql='INSERT INTO contact (Email,Message) VALUES (%s,%s)'
         val=(str(email),str(message))
+        print(sql,val)
         cursor.execute(sql,val)
         connection.commit()
         i="Thank you for your intrest, our executive will reach out to you soon"
