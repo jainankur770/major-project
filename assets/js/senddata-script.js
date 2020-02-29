@@ -2,7 +2,6 @@
 $(document).ready(function(){
     $('#ca-login-form').on( 'submit', function(e) {
         e.preventDefault();
-        var element = document.getElementById('ca-login-user-content');
 
         var username    = $('#username_login').val();
         var user_type   = username.split('_');

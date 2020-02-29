@@ -116,7 +116,7 @@ $('.ca-user').on('click', function() {
 });
 
 
-
+// Show the session details.
 if( sessionStorage.getItem( 'login_data' ) ) {
     var login = sessionStorage.getItem( 'login_data' );
     login_data = JSON.parse( login );
@@ -136,6 +136,7 @@ if( sessionStorage.getItem( 'login_data' ) ) {
         $('.ca-user-rating').append( login_data.rating );
         $('.ca-user-takingcare').append( login_data.taking_care_of );
         $('.ca-user-id').append( login_data.user_type );
+        $('.ca-user-address').append( login_data.Address );
     } else {
         $( '.ca-nav-user' ).attr( 'href', './dashboard_old.html' );
         $('.ca-nav-user').html( login_data.name );
@@ -147,16 +148,16 @@ if( sessionStorage.getItem( 'login_data' ) ) {
         $('.ca-user-contact').append( login_data.contact );
         $('.ca-user-review').append( login_data.review );
         $('.ca-user-rating').append( login_data.rating );
-        $('.ca-user-takingcare').append( login_data.taking_care_of );
-        $('.ca-user-takingcare').append( login_data.user_type );
+        $('.ca-user-takingcare').append( login_data.taken_care_by );
+        $('.ca-user-id').append( login_data.user_type );
+        $('.ca-user-address').append( login_data.Address );
     }
 } else {
     $('.ca-nav-login').css( 'display', 'initial' );
-    console.log( login_data.name );
     $('.ca-nav-user').css( 'display', 'none' );
 }
 
-
+// For logging out
 $( '#ca-user-logout' ).click( function(e) {
     e.preventDefault();
     sessionStorage.removeItem( 'login_data' );
