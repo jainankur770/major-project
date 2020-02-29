@@ -135,6 +135,11 @@ def index():
         i="Thank you for your intrest, our executive will reach out to you soon"
         i=jsonify({"text":i})
         return(i)
+    elif users == "request_data":
+        data="SELECT * FROM elder_details WHERE Taken_care_by = 0"
+        cursor.execute(data)
+        d=list(cursor.fetchone())
+        print(d)
 
 
 if __name__ == "__main__":
