@@ -3,7 +3,6 @@ $(document).ready(function(){
     $('#ca-login-form').on( 'submit', function(e) {
         e.preventDefault();
         var element = document.getElementById('ca-login-user-content');
-        var name = "hg";
 
         var username    = $('#username_login').val();
         var user_type   = username.split('_');
@@ -38,9 +37,6 @@ $(document).ready(function(){
                 }
             }
         });
-
-        $('#ca-login-user-content').html(name);
-        $('.ca-nav-user').html(name);
     })
 });
 
@@ -74,7 +70,15 @@ $(document).ready(function(){
             success: function (response) {
                 // Used sessionstorage to store the data.
                 sessionStorage.setItem( 'login_id', JSON.stringify( response ) );
-                alert("Your userid for login is " + response.id );
+                var login = sessionStorage.getItem( 'login_id' );
+                login_data = JSON.parse( login );
+                alert("Your userid for login is " + login_data.id );
+
+                $('#ca-modal-signup-window').css('display','none');
+                $('.ca-main-signup-modal').css('display','none');
+                query = "Login";
+                $('#ca-modal-login-window').css('display','block');
+                $('.ca-main-login-modal').css('display','flex');
             },
             statusCode: {
                 404: function() {
@@ -82,6 +86,8 @@ $(document).ready(function(){
                 }
             }
         });
+        //removing all the input field value.
+        $('.ca-input-type1').val('');
     })
 });
 

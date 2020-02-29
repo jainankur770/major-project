@@ -127,6 +127,7 @@ if( sessionStorage.getItem( 'login_data' ) ) {
         $('.ca-nav-user').html( login_data.name );
         $('.ca-nav-user').css( 'display', 'initial' );
         $( '.ca-nav-user' ).attr( 'href', './dashboard_young.html' );
+        $( '.ca-sidebar-link' ).attr( 'href', './dashboard_young.html' );
 
         $('.ca-user-name').append( login_data.name );
         $('.ca-user-age').append( login_data.age );
@@ -134,8 +135,20 @@ if( sessionStorage.getItem( 'login_data' ) ) {
         $('.ca-user-review').append( login_data.review );
         $('.ca-user-rating').append( login_data.rating );
         $('.ca-user-takingcare').append( login_data.taking_care_of );
+        $('.ca-user-id').append( login_data.user_type );
     } else {
         $( '.ca-nav-user' ).attr( 'href', './dashboard_old.html' );
+        $('.ca-nav-user').html( login_data.name );
+        $('.ca-nav-user').css( 'display', 'initial' );
+        $( '.ca-sidebar-link' ).attr( 'href', './dashboard_old.html' );
+
+        $('.ca-user-name').append( login_data.name );
+        $('.ca-user-age').append( login_data.age );
+        $('.ca-user-contact').append( login_data.contact );
+        $('.ca-user-review').append( login_data.review );
+        $('.ca-user-rating').append( login_data.rating );
+        $('.ca-user-takingcare').append( login_data.taking_care_of );
+        $('.ca-user-takingcare').append( login_data.user_type );
     }
 } else {
     $('.ca-nav-login').css( 'display', 'initial' );
