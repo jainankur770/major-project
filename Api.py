@@ -48,7 +48,7 @@ def index():
             #else return 0
                     for tcb in Taken_care_by:
                         rows.append(tcb)
-            j=jsonify({"name":rows[0],"age":rows[1],"fund_raised":rows[2],"address":rows[3],"contact":rows[4],"review":rows[5],"rating":rows[6],"taken_care_by":rows[7]})
+            j=jsonify({"name":rows[0],"age":rows[1],"fund_raised":rows[2],"address":rows[3],"contact":rows[4],"review":rows[5],"rating":rows[6],"taken_care_by":rows[7],"user_type":"old"})
             print(rows)
             return(j)
         elif user_type=="Young" or user_type=="young":
@@ -78,7 +78,7 @@ def index():
                     print(undertaken_elders)
                     for ute in undertaken_elders:
                         rows.append(ute)
-            j=jsonify({"name":rows[0],"age":rows[1],"Address":rows[2],"contact":rows[3],"review":rows[4],"rating":rows[5],"taking_care_of":rows[6]})
+            j=jsonify({"name":rows[0],"age":rows[1],"Address":rows[2],"contact":rows[3],"review":rows[4],"rating":rows[5],"taking_care_of":rows[6],"user_type":"young"})
             print(rows)
             return(j)
         else:
@@ -123,7 +123,7 @@ def index():
             i=jsonify({"id":i})
             return(i)
         else:
-            return(jsonify("Something went wrong, please try again later"))
+            return(jsonify("Something went wrong, please try again"))
     elif users =="contact_us":
         email=request.form["email"]
         message=request.form["message"]
