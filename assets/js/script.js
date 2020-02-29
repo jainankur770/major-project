@@ -1,7 +1,7 @@
 //Global Variable
 var query = "";
 var user_type = "";
-var loggedin_username = "";
+var login_data = "";
 
 // Function to show the sidebar.
 $(document).ready(function(){
@@ -116,9 +116,36 @@ $('.ca-user').on('click', function() {
 });
 
 
-if (document.cookie.indexOf('username') !== -1 ) {
-    $('.ca-nav-login').css( 'display', 'none' );
-    console.log( 'asdf'+loggedin_username );
-    //document.querySelector('.ca-nav-user').innerHTML= document.cookie;
-    $('.ca-nav-user').css( 'display', 'initial' );
+
+if( sessionStorage.getItem( 'login_data' ) ) {
+    var login = sessionStorage.getItem( 'login_data' );
+    login_data = JSON.parse( login );
+
+    if( login_data.user_type === 'young' ) {
+        $('.ca-nav-login').css( 'display', 'none' );
+        console.log( login_data.name );
+        $('.ca-nav-user').html( login_data.name );
+        $('.ca-nav-user').css( 'display', 'initial' );
+        $( '.ca-nav-user' ).attr( 'href', './dashboard_young.html' );
+
+        $('.ca-user-name').append( login_data.name );
+        $('.ca-user-age').append( login_data.age );
+        $('.ca-user-contact').append( login_data.contact );
+        $('.ca-user-review').append( login_data.review );
+        $('.ca-user-rating').append( login_data.rating );
+        $('.ca-user-takingcare').append( login_data.taking_care_of );
+    } else {
+        $( '.ca-nav-user' ).attr( 'href', './dashboard_old.html' );
+    }
+} else {
+    $('.ca-nav-login').css( 'display', 'initial' );
+    console.log( login_data.name );
+    $('.ca-nav-user').css( 'display', 'none' );
 }
+
+
+$( '#ca-user-logout' ).click( function(e) {
+    e.preventDefault();
+    sessionStorage.removeItem( 'login_data' );
+    location.reload(true);
+} )

@@ -3,6 +3,7 @@ $(document).ready(function(){
     $('#ca-login-form').on( 'submit', function(e) {
         e.preventDefault();
         var element = document.getElementById('ca-login-user-content');
+        var name = "hg";
 
         var username    = $('#username_login').val();
         var user_type   = username.split('_');
@@ -23,10 +24,11 @@ $(document).ready(function(){
                 password    : password
             },
             success: function (response) {
-                document.cookie = "username=" + response.name + "; path=/;";
-                alert( response.name );
-                $('#ca-login-user-content').html(response);
-                //window.location.replace("../includes/dashboard.html");
+                // Used sessionstorage to store the data.
+                sessionStorage.setItem( 'login_data', JSON.stringify( response ) );
+                var login = sessionStorage.getItem( 'login_data' );
+                login_data = JSON.parse( login );
+                window.location.replace("./dashboard_" + login_data.user_type + ".html");
                 
                 console.log( response );
             },
@@ -36,6 +38,9 @@ $(document).ready(function(){
                 }
             }
         });
+
+        $('#ca-login-user-content').html(name);
+        $('.ca-nav-user').html(name);
     })
 });
 
@@ -67,8 +72,9 @@ $(document).ready(function(){
                 password    : password
             },
             success: function (response) {
-                var signup_details = JSON.stringify(response);
-                console.log( signup_details );
+                // Used sessionstorage to store the data.
+                sessionStorage.setItem( 'login_id', JSON.stringify( response ) );
+                alert("Your userid for login is " + response.id );
             },
             statusCode: {
                 404: function() {

@@ -5,13 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>New Project</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/navbar.css">
-    <link rel="stylesheet" href="../assets/css/login-modal.css">
-    <link rel="stylesheet" href="../assets/css/header-content.css">
-    <link rel="stylesheet" href="../assets/css/aboutus.css">
-    <link rel="stylesheet" href="../assets/css/footer.css">
-    <link rel="stylesheet" href="../assets/css/dashboard.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/navbar.css">
+    <link rel="stylesheet" href="./assets/css/login-modal.css">
+    <link rel="stylesheet" href="./assets/css/header-content.css">
+    <link rel="stylesheet" href="./assets/css/aboutus.css">
+    <link rel="stylesheet" href="./assets/css/footer.css">
 
 
 
@@ -23,24 +22,16 @@
     
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script type="text/javascript">
-        // // To redirect page if the cookie doesnot exits.
-        // // Confirm that cookie does not exist
-        // if (document.cookie.indexOf('username') === -1 ) {
-        // // Re-direct to this page
-        // window.location.replace("http://www.google.com");
-        // }
-    </script>
 </head>
 <body>
-    <header class="ca-header ca-header-dashboard">
+    <header class="ca-header">
         <nav class="ca-navbar">
             <div class="ca-navbar-items">
                 <div class="ca-items">
                     <div class="ca-item ca-logo">LOGO</div>
                     <div class="ca-single-item ca-home">
                         <i class="fa fa-home" aria-hidden="true"></i>
-                        <a class="ca-nav-link" href="../index.html">Home</a>
+                        <a class="ca-nav-link" href="./index.html">Home</a>
                     </div>
                     <div class="ca-single-item ca-about">
                         <i class="fa fa-users" aria-hidden="true"></i>
@@ -54,7 +45,7 @@
                 <div class="ca-sign">
                     <i class="fa fa-sign-in" aria-hidden="true"></i>
                     <a class="ca-nav-link ca-nav-login" href="#">Login/Signup</a>
-                    <a class="ca-nav-link ca-nav-user" href="javascript:void(0);">sd</a>
+                    <a class="ca-nav-link ca-nav-user" href=""></a>
                 </div>
             </div>
 
@@ -173,7 +164,7 @@
                             <div class="ca-sidebar-items">
                                 <div class="ca-single-sidebar-item ca-home">
                                     <i class="fa fa-home" aria-hidden="true"></i>
-                                    <a class="ca-nav-link ca-sidebar-link" href="../index.html">Home</a>
+                                    <a class="ca-nav-link ca-sidebar-link" href="./index.html">Home</a>
                                 </div>
                                 <div class="ca-single-sidebar-item ca-about">
                                     <i class="fa fa-users" aria-hidden="true"></i>
@@ -186,6 +177,7 @@
                                 <div class="ca-single-sidebar-item ca-sidebar-login">
                                     <i class="fa fa-sign-in" aria-hidden="true"></i>
                                     <a class="ca-nav-link ca-nav-login ca-sidebar-link" href="javascript:void(0);">Login/Signup</a>
+                                    <a class="ca-nav-link ca-nav-user ca-sidebar-link" href=""></a>
                                 </div>
                             </div>
                         </div>
@@ -200,7 +192,7 @@
                     <div class="ca-item ca-logo">LOGO</div>
                     <div class="ca-single-item ca-home">
                         <i class="fa fa-home" aria-hidden="true"></i>
-                        <a class="ca-nav-link" href="../index.html">Home</a>
+                        <a class="ca-nav-link" href="./index.html">Home</a>
                     </div>
                     <div class="ca-single-item ca-about">
                         <i class="fa fa-users" aria-hidden="true"></i>
@@ -214,6 +206,7 @@
                 <div class="ca-sign">
                     <i class="fa fa-sign-in" aria-hidden="true"></i>
                     <a class="ca-nav-link ca-nav-login" href="">Login/Signup</a>
+                    <a class="ca-nav-link ca-nav-user" href=""></a>
                 </div>
             </div>
 
@@ -228,12 +221,45 @@
                 </div>
             </div>
         </nav>
+
+        <div class="ca-background-image">
+            <div class="ca-background-image-content">
+                <p class="ca-quote">"To care for those who once cared for us is one of the highest honors.”</p>
+                <p>― Tia Walker, The Inspired Caregiver: Finding Joy While Caring for Those You Love</p>
+            </div>
+        </div>
     </header>
     
     <!-- main section begins -->
     <div class="ca-main-section-container">
-        <div id="ca-login-user-content">
+        <div class="ca-section-aboutus">
+            <div class="ca-section-heading" id="aboutus"><h1>About Us</h1></div>
 
+            <div class="ca-section-parent-container">
+                <section class="ca-section-container">
+                    <div class="ca-section-content">
+                        <h2>Heading</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, distinctio ducimus. Praesentium quod ex reprehenderit veritatis error ipsa nobis facilis magnam, reiciendis impedit veniam corrupti obcaecati dolores quo alias deserunt!</p>
+                    </div>
+                    <div class="ca-section-image">
+                        <div>
+                            <img src="/assets/images/section-image1.jpg" alt="image">
+                        </div>
+                    </div>
+                </section>
+
+                <section class="ca-section-container">
+                    <div class="ca-section-content">
+                        <h2>Heading</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, distinctio ducimus. Praesentium quod ex reprehenderit veritatis error ipsa nobis facilis magnam, reiciendis impedit veniam corrupti obcaecati dolores quo alias deserunt!</p>
+                    </div>
+                    <div class="ca-section-image">
+                        <div>
+                            <img src="/assets/images/section-image2.jpg" alt="image">
+                        </div>
+                    </div>
+                </section>
+            </div>
         </div>
     </div>
 
@@ -243,7 +269,7 @@
         </div>
     </footer>
 
-    <script src="../assets/js/script.js"></script>
-    <script src="../assets/js/senddata-script.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/senddata-script.js"></script>
 </body>
 </html>
