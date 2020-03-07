@@ -140,6 +140,7 @@ def index():
         cursor.execute(data)
         d=list(cursor.fetchone())
         print(d)
+        return(d)
 
 
 if __name__ == "__main__":
