@@ -138,9 +138,9 @@ def index():
     elif users == "request_data":
         data="SELECT * FROM elder_details WHERE Taken_care_by = 0"
         cursor.execute(data)
-        d=list(cursor.fetchone())
+        d=list(cursor.fetchall())
         print(d)
-        return(d)
+        return(jsonify(d))
 
 
 if __name__ == "__main__":

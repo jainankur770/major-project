@@ -3,17 +3,17 @@
 var list_elders = "";
 $(document).ready(function(){
 
-    list_elders = 'request_data';
+    query         = 'request_data';
     $.ajax({
         type: "POST",
         url: "http://127.0.0.1:5000/",
         dataType: "json",
         data: {
-            list_elders       : list_elders,
+            query       : query,
         },
         success: function (response) {
-            var elders_list = JSON.stringify(response);
-            console.log( elders_list );
+            // var elders_list = JSON.stringify(response);
+            console.log( response[0] );
         },
         statusCode: {
             404: function() {
