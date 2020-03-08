@@ -91,6 +91,7 @@ $(document).ready(function(){
 });
 
 
+// For contact form query.
 $(document).ready(function(){
     $('#ca-contact-form').on( 'submit', function(e) {
         e.preventDefault();

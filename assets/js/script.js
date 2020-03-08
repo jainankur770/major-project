@@ -127,7 +127,7 @@ if( sessionStorage.getItem( 'login_data' ) ) {
         $('.ca-nav-user').html( login_data.name );
         $('.ca-nav-user').css( 'display', 'initial' );
         $( '.ca-nav-user' ).attr( 'href', './dashboard_young.html' );
-        $( '.ca-sidebar-link' ).attr( 'href', './dashboard_young.html' );
+        $( '.ca-user-sidebar' ).attr( 'href', './dashboard_young.html' );
 
         $('.ca-user-name').append( login_data.name );
         $('.ca-user-age').append( login_data.age );
@@ -138,10 +138,11 @@ if( sessionStorage.getItem( 'login_data' ) ) {
         $('.ca-user-id').append( login_data.user_type );
         $('.ca-user-address').append( login_data.Address );
     } else {
+        $('.ca-nav-login').css( 'display', 'none' );
         $( '.ca-nav-user' ).attr( 'href', './dashboard_old.html' );
+        $( '.ca-user-sidebar' ).attr( 'href', './dashboard_old.html' );
         $('.ca-nav-user').html( login_data.name );
         $('.ca-nav-user').css( 'display', 'initial' );
-        $( '.ca-sidebar-link' ).attr( 'href', './dashboard_old.html' );
 
         $('.ca-user-name').append( login_data.name );
         $('.ca-user-age').append( login_data.age );
