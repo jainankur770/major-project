@@ -9,11 +9,14 @@
 
 .ca-user-links{
     padding: 10px;
-    display: block;
     box-shadow: 6px 0px 5px #aaaaaa;
-    width: 25%;
+    width: 250px;
     display: flex;
     flex-direction: column;
+}
+
+.ca-responsive-user-links{
+    display: none;
 }
 
 .ca-user-profile-photo{
@@ -24,8 +27,7 @@
 }
 
 .ca-user-profile-photo img{
-    width: 150px;
-    height: 150px;
+    width: 80%;
     border-radius: 50%;
 }
 
@@ -54,7 +56,7 @@
 
 .ca-user-info{
     padding: 10px;
-    width: 100%;
+    flex: 1;
 }
 
 .ca-dashboard-info{
@@ -65,4 +67,59 @@
 
 .ca-dashboard-heading{
     font-size: 30px;
+}
+
+.ca-user-options-dropdown{
+    /* display: none; */
+}
+
+.ca-user-options-label{
+    font-size: 20px;
+}
+
+@media only screen and (max-width: 800px) {
+    #ca-login-user-content{
+        display: block;
+        width: 100%;
+    }
+
+    .ca-user-links{
+        display: none;
+    }
+
+    .ca-responsive-user-links{
+        width: 100%;
+        display: flex;
+        height: 90px;
+        margin-top: 0;
+        padding: 10px;
+    }
+
+    .ca-responsive-user-profile-photo{
+        margin-top: 0;
+        padding: 0 0px 0 10px;
+        text-align: left;
+        width: 50%;
+    }
+
+    .ca-responsive-user-profile-photo img{
+        height: -webkit-fill-available;
+        border-radius: 50%;
+    }
+
+    .ca-responsive-user-options{
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+    }
+
+    .ca-user-options-dropdown{
+        position: absolute;
+    }
+
+    #ca-logout{
+        margin-top: 0px;
+    }
 }

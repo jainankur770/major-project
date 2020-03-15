@@ -22,7 +22,9 @@ $(document).click( function(event) {
     }
 });
 
-$('.ca-nav-login').click( function(){
+
+// Event delegation to on click class( fires at the time of listening ).
+$( document ).on( 'click', '.ca-nav-login', function(){
     query = "Login";
 
     //To prevent body from scrolling when modal is opened.
@@ -120,14 +122,13 @@ $('.ca-user').on('click', function() {
 if( sessionStorage.getItem( 'login_data' ) ) {
     var login = sessionStorage.getItem( 'login_data' );
     login_data = JSON.parse( login );
+    $('.ca-nav-user').removeClass( 'ca-nav-login' );
+    console.log( login_data.name );
 
     if( login_data.user_type === 'young' ) {
-        $('.ca-nav-login').css( 'display', 'none' );
-        console.log( login_data.name );
         $('.ca-nav-user').html( login_data.name );
-        $('.ca-nav-user').css( 'display', 'initial' );
-        $( '.ca-nav-user' ).attr( 'href', './dashboard_young.html' );
-        $( '.ca-user-sidebar' ).attr( 'href', './dashboard_young.html' );
+        $( '.ca-nav-user' ).attr( 'href', './dashboard_young.php' );
+        $( '.ca-user-sidebar' ).attr( 'href', './dashboard_young.php' );
 
         $('.ca-user-name').append( login_data.name );
         $('.ca-user-age').append( login_data.age );
@@ -138,11 +139,9 @@ if( sessionStorage.getItem( 'login_data' ) ) {
         $('.ca-user-id').append( login_data.user_type );
         $('.ca-user-address').append( login_data.Address );
     } else {
-        $('.ca-nav-login').css( 'display', 'none' );
-        $( '.ca-nav-user' ).attr( 'href', './dashboard_old.html' );
-        $( '.ca-user-sidebar' ).attr( 'href', './dashboard_old.html' );
+        $( '.ca-nav-user' ).attr( 'href', './dashboard_old.php' );
+        $( '.ca-user-sidebar' ).attr( 'href', './dashboard_old.php' );
         $('.ca-nav-user').html( login_data.name );
-        $('.ca-nav-user').css( 'display', 'initial' );
 
         $('.ca-user-name').append( login_data.name );
         $('.ca-user-age').append( login_data.age );
@@ -153,14 +152,13 @@ if( sessionStorage.getItem( 'login_data' ) ) {
         $('.ca-user-id').append( login_data.user_type );
         $('.ca-user-address').append( login_data.Address );
     }
-} else {
-    $('.ca-nav-login').css( 'display', 'initial' );
-    $('.ca-nav-user').css( 'display', 'none' );
 }
 
 // For logging out
 $( '#ca-user-logout' ).click( function(e) {
     e.preventDefault();
     sessionStorage.removeItem( 'login_data' );
+    $('.ca-nav-user').addClass( 'ca-nav-login' );
+    $('.ca-nav-user').html( 'Login/Signup' );
     location.reload(true);
 } )

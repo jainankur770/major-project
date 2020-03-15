@@ -38,11 +38,14 @@
 }
 
 .ca-sign, .ca-sign-responsive{
+    text-align: center;
     width: 20%;
 }
 
 .ca-sign-responsive{
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .ca-logo, .ca-logo-resposive{
@@ -62,9 +65,9 @@
     transition: all 0.3s linear;
 }
 
-.ca-nav-user{
+/* .ca-nav-user{
     display: none;
-}
+} */
 
 .ca-nav-link:before {
   content: "";
@@ -100,6 +103,7 @@
     transform: translateX(0%);
     transition: transform 0.33s cubic-bezier( 0.32, 0.01, 0, 1 );
     box-shadow: -3px 0px 5px #aaaaaa;
+    overflow-y: auto;
 }
 
 .ca-sidebar-msg{

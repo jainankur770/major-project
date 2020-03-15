@@ -23,10 +23,11 @@ $(document).ready(function(){
             },
             success: function (response) {
                 // Used sessionstorage to store the data.
+                alert(response);
                 sessionStorage.setItem( 'login_data', JSON.stringify( response ) );
                 var login = sessionStorage.getItem( 'login_data' );
                 login_data = JSON.parse( login );
-                window.location.replace("./dashboard_" + login_data.user_type + ".html");
+                window.location.replace("./dashboard_" + login_data.user_type + ".php");
                 
                 console.log( response );
             },
