@@ -136,7 +136,7 @@ def index():
         i=jsonify({"text":i})
         return(i)
     elif users == "request_data":
-        data="SELECT * FROM elder_details WHERE Taken_care_by = 0"
+        data="SELECT Id,Name,Age,Fund_raised,Address,Contact,Review,Rating FROM elder_details WHERE Taken_care_by = 0"
         cursor.execute(data)
         d=list(cursor.fetchall())
         print(d)
