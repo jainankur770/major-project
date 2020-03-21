@@ -42,6 +42,14 @@ $('.ca-modal-close').click( function(){
 } );
 
 
+
+ 
+// Set effect from select menu value.
+$( ".ca-user-option-label" ).click( function() {
+    $( ".ca-user-options-dropdown" ).toggle( 'blind', 200 );
+});
+
+
 // Second Way - Function to show hide the sidebar if anywhere outside is clicked.
 $(document).click(function (e) {
     var container = $(".ca-main-login-modal, .ca-nav-link, .ca-main-signup-modal");
